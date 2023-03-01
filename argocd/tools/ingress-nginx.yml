@@ -14,3 +14,6 @@ spec:
   destination:
     server: "https://kubernetes.default.svc"
     namespace: ingress-nginx
+  syncPolicy:
+    automated:
+      selfHeal: true
