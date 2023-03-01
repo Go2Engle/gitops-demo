@@ -11,7 +11,7 @@ spec:
   - host: dev.127.0.0.1.nip.io
     http:
       paths:
-      - path: /nextjs-hello-world/(.*)
+      - path: /(nextjs-hello-world.*)
         pathType: Prefix
         backend:
           service:
