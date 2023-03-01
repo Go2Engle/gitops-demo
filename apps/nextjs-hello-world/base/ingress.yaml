@@ -3,15 +3,14 @@ kind: Ingress
 metadata:
   name: nextjs-hello-world
   annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$1
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: "nginx"
   rules:
   - host: dev.127.0.0.1.nip.io
     http:
       paths:
-      - path: /(nextjs-hello-world.*)
+      - path: /nextjs-hello-world
         pathType: Prefix
         backend:
           service:
