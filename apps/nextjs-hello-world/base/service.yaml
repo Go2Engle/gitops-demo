@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: hello-world
+  name: nextjs-hello-world
 spec:
   selector:
-    app: hello-world
+    app: nextjs-hello-world
   ports:
   - port: 3000
     targetPort: 3000

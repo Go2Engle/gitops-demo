@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: hello-world
+  name: nextjs-hello-world
 spec:
   template:
     spec:
       containers:
-        - name: hello-world
+        - name: nextjs-hello-world
           image: ghcr.io/go2engle/nextjs-hello-world:latest
