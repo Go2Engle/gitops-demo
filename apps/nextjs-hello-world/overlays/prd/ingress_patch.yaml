@@ -5,10 +5,10 @@ metadata:
 spec:
   ingressClassName: "nginx"
   rules:
-  - host: prd.127.0.0.1.nip.io
+  - host: prd.nextjs.127.0.0.1.nip.io
     http:
       paths:
-      - path: /nextjs-hello-world/(.*)
+      - path: /
         pathType: Prefix
         backend:
           service:
