@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
         - name: nextjs-hello-world
-          image: ghcr.io/go2engle/nextjs-hello-world:latest
+          image: ghcr.io/go2engle/nextjs-hello-world:0.0.1
