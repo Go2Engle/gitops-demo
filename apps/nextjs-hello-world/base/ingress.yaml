@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-world
+  annotations:
+    nginx.ingress.kubernetes.io/use-regex: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
+spec:
+  ingressClassName: "nginx"
+  rules:
+  - host: dev.127.0.0.1.nip.io
+    http:
+      paths:
+      - path: /nextjs-hello-world/(.*)
+        pathType: Prefix
+        backend:
+          service:
+            name: hello-world
+            port:
+              number: 80
