@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: hello-world
-        image: ghcr.io/go2engle/hello-world:latest
+        image: ghcr.io/go2engle/hello-world:1.0.0
         ports:
         - containerPort: 80
