@@ -1,0 +1,57 @@
+# ---
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: hello-world-dev
+#   namespace: argocd
+#   # annotations:
+#   #   argocd-image-updater.argoproj.io/image-list: image=ghcr.io/go2engle/hello-world:latest
+#   #   argocd-image-updater.argoproj.io/image.update-strategy: latest
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/Go2Engle/gitops-demo.git
+#     targetRevision: HEAD
+#     path: apps/hello-world/overlays/dev
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: dev
+#   syncPolicy:
+#     automated:
+#       selfHeal: true
+# ---
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: hello-world-qa
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/Go2Engle/gitops-demo.git
+#     targetRevision: HEAD
+#     path: apps/hello-world/overlays/qa
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: qa
+#   syncPolicy:
+#     automated:
+#       selfHeal: true
+# ---
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: hello-world-prd
+#   namespace: argocd
+# spec:
+#   project: default
+#   source:
+#     repoURL: https://github.com/Go2Engle/gitops-demo.git
+#     targetRevision: HEAD
+#     path: apps/hello-world/overlays/prd
+#   destination:
+#     server: https://kubernetes.default.svc
+#     namespace: prd
+#   syncPolicy:
+#     automated:
+#       selfHeal: true

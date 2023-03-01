@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: hello-world
+spec:
+  ingressClassName: "nginx"
+  rules:
+  - host: qa.127.0.0.1.nip.io
+    http:
+      paths:
+      - path: /hello-world
+        pathType: Prefix
+        backend:
+          service:
+            name: hello-world
+            port:
+              number: 80
